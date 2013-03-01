@@ -27,7 +27,7 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'initjs'
-#gem 'rack-google-analytics'
+gem 'rack-google-analytics'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
