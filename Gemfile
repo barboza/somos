@@ -11,17 +11,17 @@ gem 'thin'
 
 # Improvements
 gem 'inherited_resources'
-#gem 'simple_form'
+gem 'simple_form'
 
 # I18n
 gem 'rails-i18n'
-#gem 'devise-i18n'
+gem 'devise-i18n'
 
 # Authentication
-#gem 'devise', '~> 2.1.2'
-#gem 'omniauth', '~> 1.1.1'
-#gem 'omniauth-facebook', '~> 1.4.1'
-#gem 'omniauth-twitter', '~> 0.0.14'
+gem 'devise', '~> 2.1.2'
+gem 'omniauth', '~> 1.1.1'
+gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth-twitter', '~> 0.0.14'
 
 # Frontend stuff
 gem 'jquery-rails'
