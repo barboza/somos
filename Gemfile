@@ -35,8 +35,7 @@ group :assets do
   gem 'compass-rails', '~> 1.0.3'
   gem 'uglifier', '>= 1.0.3'
   #gem 'turbolinks'
-  #gem 'bootstrap-sass'
-  #gem 'zurb-foundation'
+  gem 'bootstrap-sass'
   #gem 'angular-rails'
 end
 
