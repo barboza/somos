@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+//= require_tree ./lib
+//= require ./app.js
+//= require_tree ./app
+//= require init.js
+
