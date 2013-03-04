@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# API keys
+Setting['facebook.key']     = 'key'
+Setting['facebook.secret']  = 'secret'
+Setting['twitter.key']      = 'key'
+Setting['twitter.secret']   = 'secret'
