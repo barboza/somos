@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+// Loads all Bootstrap javascripts
+//= require bootstrap
 
 //= require ./lib/backbone.js
 //= require_tree ./lib
