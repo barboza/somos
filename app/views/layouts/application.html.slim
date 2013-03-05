@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Somos+
+    = stylesheet_link_tag "application"
+    meta[charset="utf-8"]
+    = yield(:meta_tags)
+    = csrf_meta_tag
+    = javascript_include_tag "application"
+    javascript_include_tag :defaults
+  body
+    = initjs_tag
+    = render 'layouts/flash', flash: flash if flash.present?
+    = render 'layouts/header'
+    = yield
+    = render 'layouts/footer'
