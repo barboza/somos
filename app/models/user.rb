@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :image_url, :password_confirmation, :remember_me, :document_number, :gender, :landline, :mobile_phone, :address
   has_many :authorizations, dependent: :destroy
-  validates :name, presence: true
+  has_many :missions
+  validates :name, :document_number, presence: true
 
   def self.new_with_session(params, session)
     super.tap do |user|

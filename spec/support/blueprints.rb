@@ -7,6 +7,7 @@ User.blueprint do
   email {"someniceguy#{sn}@gmail.com"}
   password {'niceguy'}
   password_confirmation {'niceguy'}
+  document_number{"94848474747"}
 end
 
 Authorization.blueprint do

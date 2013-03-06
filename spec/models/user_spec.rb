@@ -68,5 +68,12 @@ describe User do
     it{ should validate_presence_of :name }
     it{ should validate_presence_of :email }
     it{ should validate_presence_of :password }
+    it{ should validate_presence_of :document_number }
+  end
+
+  describe "associations" do
+    subject { @user }
+
+    it {should have_many :missions}
   end
 end
