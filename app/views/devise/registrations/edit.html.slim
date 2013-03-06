@@ -9,6 +9,10 @@ h2
     = f.input :password, :autocomplete => "off", :required => false
     = f.input :password_confirmation, :required => false
     = f.input :current_password, :required => true
+    = f.input :document_number, required: true, hint: false
+    = f.input :landline
+    = f.input :mobile_phone
+    = f.input :gender, collection: ["Masculino", "Feminino"]
   = f.button :submit, t(".update")
 
 - if devise_mapping.omniauthable?
