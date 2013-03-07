@@ -3,6 +3,6 @@ h2 = t(".resend_unlock_instructions")
   = f.error_notification
   .form-inputs
     = f.input :email, :required => true
-  = f.button :submit, t(".resend_unlock_instructions")
+  = f.button :submit, t(".resend_unlock_instructions"), class: "btn-primary"
 
 = render "devise/shared/links"

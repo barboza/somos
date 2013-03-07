@@ -13,7 +13,7 @@ h2
     = f.input :landline
     = f.input :mobile_phone
     = f.input :gender, collection: ["Masculino", "Feminino"]
-  = f.button :submit, t(".update")
+  = f.button :submit, t(".update"), class: "btn-primary"
 
 - if devise_mapping.omniauthable?
   table.table
