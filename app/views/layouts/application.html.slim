@@ -12,5 +12,6 @@ html
     = initjs_tag
     = render 'layouts/flash', flash: flash if flash.present?
     = render 'layouts/header'
-    = yield
+    .container
+      = yield
     = render 'layouts/footer'
