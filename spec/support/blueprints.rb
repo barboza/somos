@@ -15,3 +15,15 @@ Authorization.blueprint do
   provider {"facebook"}
   uid {10000}
 end
+
+Mission.blueprint do
+  user {User.make!}
+  title {'Nice title'}
+  description {'Lore ipsum dolor sit amet'}
+  category {Category.make!}
+  goal {20} 
+end
+
+Category.blueprint do
+  name {'Example'}
+end
