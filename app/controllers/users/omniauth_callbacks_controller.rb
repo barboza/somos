@@ -1,5 +1,13 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def action_missing(provider)
+  def facebook
+    callback
+  end
+
+  def twitter
+    callback
+  end
+
+  def callback
     omniauth = env["omniauth.auth"]
     if current_user
       current_user.authorizations.where(provider: omniauth['provider'], uid: omniauth['uid']).first_or_create
