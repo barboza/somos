@@ -1,4 +1,7 @@
 Somos::Application.routes.draw do
+
+  resources :missions
+
   resources :authorizations, only: [:destroy]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
