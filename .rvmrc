@@ -1,1 +1,1 @@
-rvm --create ruby-1.9.3-p327@somos
+rvm --create 1.9.3@somos
