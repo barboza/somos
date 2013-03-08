@@ -24,6 +24,6 @@
     = f.input :mobile_phone
     = f.input :gender, collection: ["Masculino", "Feminino"]
 
-    = f.button :submit, t(".sign_up")
+    = f.button :submit, t(".sign_up"), class: "btn-primary"
   = render "devise/shared/links"
 
