@@ -1,0 +1,18 @@
+.misison
+  .row-fluid
+    .span10.mission-body
+      h1 = link_to mission.title, mission
+      p 
+        | Agente responsável:
+        img src="#{mission.user.avatar_url}" height="22" width="22"
+        blockquote
+          = simple_format mission.short_description
+
+    .mission-actions
+      .pull-right
+        = link_to mission_path(mission), class: 'btn' do
+          i.icon-info-sign
+          | Mais Informações
+        = link_to mission_path(mission), class: 'btn btn-primary' do
+          i.icon-briefcase.icon-white
+          | Quero Ajudar!
