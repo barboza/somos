@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13.rc2'
+gem 'rails', '3.2.13'
 
 # Database
 gem 'pg'
@@ -31,12 +31,12 @@ gem 'initjs'
 gem 'rack-google-analytics'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
+  gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'compass-rails', '~> 1.0.3'
   gem 'uglifier', '>= 1.0.3'
   #gem 'turbolinks'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2.3.0.1'
 end
 
 group :production do
