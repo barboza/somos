@@ -3,8 +3,6 @@ development:
   encoding: unicode
   database: somos_development
   pool: 5
-  #username: postgres
-  #password:
   host: localhost
 
 test:
@@ -12,8 +10,6 @@ test:
   encoding: unicode
   database: somos_test
   pool: 5
-  #username: postgres
-  #password:
   min_messages: WARNING
   host: localhost
 
@@ -22,6 +18,4 @@ production:
   encoding: unicode
   database: somos_production
   pool: 5
-  username: postgres
-  password:
   host: localhost
