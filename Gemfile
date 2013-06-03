@@ -45,6 +45,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.12.0'
   gem 'shoulda-matchers', '~> 1.4.1'
   gem 'machinist', '~> 2.0'

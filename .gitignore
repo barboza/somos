@@ -12,6 +12,5 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 **.orig
-config/database.yml
 db/schema.rb
 
