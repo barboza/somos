@@ -5,12 +5,15 @@ describe MissionsController do
 
   before do
     @request.env["devise.mapping"] = Devise.mappings[:user]
-    user = FactoryGirl.create(:user)
     sign_in user
   end
 
+  let(:user) do
+    FactoryGirl.create(:user)
+  end
+
   let(:mission) do
-    FactoryGirl.build(:mission)
+    FactoryGirl.build(:mission, user_id: user.id)
   end
 
   describe "GET 'show'" do
@@ -42,18 +45,14 @@ describe MissionsController do
   end
 
   describe "POST 'create'" do
-    let(:attributes) do
-      {mission: FactoryGirl.attributes_for(:mission)}
-    end
-
-    it "returns http success" do
-      post 'create', attributes
-      response.should be_success
+    let(:model) do
+      stub_model(Mission, id: 123, save: true)
     end
 
     it "redirects to missions#show" do
-      post 'create', attributes
-      response.should render_template('missions/new')
+      Mission.stub(new: model)
+      post 'create'
+      response.should redirect_to(mission_url(model))
     end
   end
 
@@ -93,11 +92,14 @@ describe MissionsController do
     end
   end
 
-  describe "GET 'delete'" do
-    pending "returns http success" do
-      get 'delete'
-      response.should be_success
+  describe "DELETE 'destroy'" do
+    before do
+      mission.save!
+    end
+
+    it "returns http success" do
+      delete 'destroy', {id: mission.id}
+      response.status.should == 302
     end
   end
-
 end
