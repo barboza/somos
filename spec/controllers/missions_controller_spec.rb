@@ -58,9 +58,18 @@ describe MissionsController do
   end
 
   describe "GET 'edit'" do
-    pending "returns http success" do
-      get 'edit'
+    before do
+      mission.save!
+    end
+
+    it "returns http success" do
+      get 'edit', {id: mission.id}
       response.should be_success
+    end
+
+    it "renders template missions#edit" do
+      post 'edit', {id: mission.id}
+      response.should render_template('missions/edit')
     end
   end
 
