@@ -56,4 +56,5 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'rails-default-database'
 end
