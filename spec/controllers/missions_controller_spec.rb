@@ -4,13 +4,13 @@ describe MissionsController do
   include Devise::TestHelpers
 
   before do
-    user = stub_model(User)
     User.stub(where: [user])
     @request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in user
   end
 
-  let(:mission) { stub_model(Mission, id: 123) }
+  let(:user)    { stub_model(User) }
+  let(:mission) { mock_model(Mission, id: 123) }
 
   describe "GET 'show'" do
     before { Mission.stub(find: mission) }
@@ -43,12 +43,22 @@ describe MissionsController do
   describe "POST 'create'" do
     before do
       Mission.stub(new: mission)
-      mission.stub(save: true)
+      mission.stub('save' => true, 'user=' => nil)
     end
 
     it "redirects to missions#show" do
       post 'create'
       response.should redirect_to(mission_url(mission))
+    end
+
+    it "assings the current user as the user of the mission" do
+      mission.should_receive('user=').with(user)
+      post 'create'
+    end
+
+    it "saves the mission" do
+      mission.should_receive('save').with(no_args)
+      post 'create'
     end
   end
 
@@ -67,7 +77,10 @@ describe MissionsController do
   end
 
   describe "PUT 'update'" do
-    before { Mission.stub(find: mission) }
+    before do
+      Mission.stub(find: mission)
+      mission.stub(update_attributes: nil)
+    end
 
     it "returns http success" do
       put 'update', {id: mission.id}
