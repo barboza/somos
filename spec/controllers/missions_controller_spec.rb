@@ -41,10 +41,19 @@ describe MissionsController do
     end
   end
 
-  describe "GET 'create'" do
-    pending "returns http success" do
-      get 'create'
+  describe "POST 'create'" do
+    let(:attributes) do
+      {mission: FactoryGirl.attributes_for(:mission)}
+    end
+
+    it "returns http success" do
+      post 'create', attributes
       response.should be_success
+    end
+
+    it "redirects to missions#show" do
+      post 'create', attributes
+      response.should render_template('missions/new')
     end
   end
 
