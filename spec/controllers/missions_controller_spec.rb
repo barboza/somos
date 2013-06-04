@@ -68,7 +68,7 @@ describe MissionsController do
     end
 
     it "renders template missions#edit" do
-      post 'edit', {id: mission.id}
+      get 'edit', {id: mission.id}
       response.should render_template('missions/edit')
     end
   end
