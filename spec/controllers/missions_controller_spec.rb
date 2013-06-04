@@ -97,9 +97,9 @@ describe MissionsController do
       mission.save!
     end
 
-    it "returns http success" do
-      delete 'destroy', {id: mission.id}
-      response.status.should == 302
+    it "redirects to missions url" do
+      delete 'destroy', id: mission.id
+      response.should redirect_to(missions_url)
     end
   end
 end
