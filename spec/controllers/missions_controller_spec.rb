@@ -4,22 +4,16 @@ describe MissionsController do
   include Devise::TestHelpers
 
   before do
+    user = stub_model(User)
+    User.stub(where: [user])
     @request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in user
   end
 
-  let(:user) do
-    FactoryGirl.create(:user)
-  end
-
-  let(:mission) do
-    FactoryGirl.build(:mission, user_id: user.id)
-  end
+  let(:mission) { stub_model(Mission, id: 123) }
 
   describe "GET 'show'" do
-    before do
-      mission.save!
-    end
+    before { Mission.stub(find: mission) }
 
     it "returns http success" do
       get 'show', {id: mission.id}
@@ -33,6 +27,8 @@ describe MissionsController do
   end
 
   describe "GET 'new'" do
+    before { Mission.stub(new: mission) }
+
     it "returns http success" do
       get 'new'
       response.should be_success
@@ -45,21 +41,19 @@ describe MissionsController do
   end
 
   describe "POST 'create'" do
-    let(:model) do
-      stub_model(Mission, id: 123, save: true)
+    before do
+      Mission.stub(new: mission)
+      mission.stub(save: true)
     end
 
     it "redirects to missions#show" do
-      Mission.stub(new: model)
       post 'create'
-      response.should redirect_to(mission_url(model))
+      response.should redirect_to(mission_url(mission))
     end
   end
 
   describe "GET 'edit'" do
-    before do
-      mission.save!
-    end
+    before { Mission.stub(find: mission) }
 
     it "returns http success" do
       get 'edit', {id: mission.id}
@@ -73,28 +67,23 @@ describe MissionsController do
   end
 
   describe "PUT 'update'" do
-    before do
-      mission.save!
-    end
-
-    let(:attributes) do
-      {mission: FactoryGirl.attributes_for(:mission, title: 'new title')}
-    end
+    before { Mission.stub(find: mission) }
 
     it "returns http success" do
-      put 'update', {id: mission.id}.merge(attributes)
+      put 'update', {id: mission.id}
       response.should be_success
     end
 
     it "renders template missions#update" do
-      put 'update', {id: mission.id}.merge(attributes)
+      put 'update', {id: mission.id}
       response.should render_template('missions/update')
     end
   end
 
   describe "DELETE 'destroy'" do
     before do
-      mission.save!
+      Mission.stub(find: mission)
+      mission.stub(destroy: true)
     end
 
     it "redirects to missions url" do
