@@ -36,8 +36,10 @@ Then just checkout the code, configure dependencies and run the tests:
 	`cd somos`
 
 2. Prepare the database
-	
-	`bundle exec rake db:test:prepare`
+
+  `bundle exec rake db:config`
+
+  `bundle exec rake db:test:prepare`
 
 3. Run the rspec
 
