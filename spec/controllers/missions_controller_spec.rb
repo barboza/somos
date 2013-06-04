@@ -73,10 +73,23 @@ describe MissionsController do
     end
   end
 
-  describe "GET 'update'" do
-    pending "returns http success" do
-      get 'update'
+  describe "PUT 'update'" do
+    before do
+      mission.save!
+    end
+
+    let(:attributes) do
+      {mission: FactoryGirl.attributes_for(:mission, title: 'new title')}
+    end
+
+    it "returns http success" do
+      put 'update', {id: mission.id}.merge(attributes)
       response.should be_success
+    end
+
+    it "renders template missions#update" do
+      put 'update', {id: mission.id}.merge(attributes)
+      response.should render_template('missions/update')
     end
   end
 
