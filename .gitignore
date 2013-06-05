@@ -1,5 +1,6 @@
 .DS_store
 *.rbc
+*.swp
 *.sassc
 .sass-cache
 capybara-*.html
