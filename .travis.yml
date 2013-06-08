@@ -1,7 +1,16 @@
-language: ruby
 rvm:
-  - "1.9.3"
-  - jruby-19mode # JRuby in 1.9 mode
-  - rbx-19mode
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+  - 1.9.3
+
+before_script:
+  - "cp config/database.sample.yml config/database.yml"
+  - "bundle exec rake db:migrate"
+
+env:
+  - DISPLAY=:99.0
+
+script:
+  - "bundle exec rspec spec"
+
+branches:
+  only:
+    - master
