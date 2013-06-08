@@ -4,6 +4,9 @@ Somos::Application.configure do
 
   # Settings specified here will take precedence over those in config/application.rb
 
+
+  config.eager_load = false
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -15,7 +18,7 @@ Somos::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  config.assets.compress = true
+  config.assets.js_compress = :uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
@@ -34,7 +37,7 @@ Somos::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -67,4 +70,6 @@ Somos::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.log_formatter = ::Logger::Formater.new
 end
