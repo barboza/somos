@@ -153,6 +153,8 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-default-database (1.0.6)
+      railties
     rails-i18n (0.7.3)
       i18n (~> 0.5)
     rails-settings-cached (0.2.4)
@@ -254,6 +256,7 @@ DEPENDENCIES
   pry
   rack-google-analytics
   rails (= 3.2.13)
+  rails-default-database
   rails-i18n
   rails-settings-cached (= 0.2.4)
   rspec-rails (~> 2.12.0)

@@ -1,5 +1,7 @@
 # Somos+
 
+[![Build Status](https://travis-ci.org/barboza/somos.png?branch=master)](https://travis-ci.org/barboza/somos)
+
 Somos+ is an open source plataform to help people that need help to find people that want to help them.
 
 
@@ -36,8 +38,10 @@ Then just checkout the code, configure dependencies and run the tests:
 	`cd somos`
 
 2. Prepare the database
-	
-	`bundle exec rake db:test:prepare`
+
+  `bundle exec rake db:config`
+
+  `bundle exec rake db:test:prepare`
 
 3. Run the rspec
 
