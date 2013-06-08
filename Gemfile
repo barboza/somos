@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+ruby '2.0.0'
+
+gem 'rails', '4.0.0.rc1'
 
 # Database
 gem 'pg'
@@ -10,34 +12,31 @@ gem 'foreigner'
 gem 'thin'
 
 # Improvements
-gem 'inherited_resources'
-gem 'simple_form'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'simple_form', '~> 3.0.0.rc'
 
 # I18n
 gem 'rails-i18n'
 gem 'devise-i18n'
 
 # Authentication
-gem 'devise', '~> 2.1.2'
-gem 'omniauth', '~> 1.1.1'
-gem 'omniauth-facebook', '~> 1.4.1'
-gem 'omniauth-twitter', '~> 0.0.14'
-gem "rails-settings-cached", "0.2.4"
+gem 'devise', '3.0.0.rc'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem "rails-settings-cached"
 
 # Frontend stuff
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1'
 gem 'slim-rails'
 gem 'initjs'
 gem 'rack-google-analytics'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.6'
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'compass-rails', '~> 1.0.3'
-  gem 'uglifier', '>= 1.0.3'
-  #gem 'turbolinks'
-  gem 'bootstrap-sass', '~> 2.3.0.1'
-end
+gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'coffee-rails', '4.0.0'
+gem 'uglifier'
+#gem 'turbolinks'
+gem 'bootstrap-sass'
 
 group :production do
   gem 'execjs'
@@ -45,9 +44,9 @@ group :production do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.12.0'
-  gem 'shoulda-matchers', '~> 1.4.1'
-  gem 'machinist', '~> 2.0'
+  gem 'rspec-rails', '~> 2.14.0.rc1'
+  gem 'shoulda-matchers'
+  gem 'machinist'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'pry'
