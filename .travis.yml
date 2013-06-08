@@ -3,7 +3,7 @@ rvm:
 
 before_script:
   - "cp config/database.sample.yml config/database.yml"
-  - "bundle exec rake db:migrate"
+  - "bundle exec rake db:create db:migrate"
 
 env:
   - DISPLAY=:99.0
