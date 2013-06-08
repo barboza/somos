@@ -1,5 +1,7 @@
 # Somos+
 
+[![Build Status](https://travis-ci.org/barboza/somos.png?branch=master)](https://travis-ci.org/barboza/somos)
+
 Somos+ is an open source plataform to help people that need help to find people that want to help them.
 
 
