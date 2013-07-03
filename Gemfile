@@ -24,7 +24,7 @@ gem 'devise', '3.0.0.rc'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem "rails-settings-cached"
+gem 'rails-settings-cached'
 
 # Frontend stuff
 gem 'jquery-rails', '2.1'

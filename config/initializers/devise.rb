@@ -230,8 +230,8 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
   begin
-    config.omniauth :facebook, Setting['facebook.key'], Setting['facebook.secret'], scope: 'email', image_size: 'normal'
-    config.omniauth :twitter, Setting['twitter.key'], Setting['twitter.secret']
+    config.omniauth :facebook, '192772744215335', 'abc78c9c770f70e35f80345ae3a9309c', scope: 'email', image_size: 'normal'
+    config.omniauth :twitter, 'LBgYI1nZ5sA3LkOVtsZkA', '0S7l3QJsSU1Le1aPV1QTzsMXl6be91e6Uy4OWHo'
   rescue Exception => e
     Rails.logger.warn "Error loading settings: #{e}"
   end
